@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AFNetworking-RACRetryExtensions"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "AFNetworking-RACRetryExtensions is an extension to the AFNetworking classes for iOS and Mac OS X that adds the auto-retry ability."
   s.homepage     = "https://github.com/legoless/AFNetworking-RACRetryExtensions"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }

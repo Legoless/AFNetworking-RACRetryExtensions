@@ -81,7 +81,7 @@ NSTimeInterval const RACDefaultTimeInterval = 10.0;
     return [[RACSignal createSignal:^(id<RACSubscriber> subscriber) {
         NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:path relativeToURL:self.baseURL] absoluteString] parameters:parameters constructingBodyWithBlock:block error:nil];
         
-        id task = [self URLSessionRetryDataTaskForRequest:request numberOfRetries:retries retryInterval:interval test:testBlock subscriber:subscriber];
+        RACURLSessionRetryDataTask *task = [self URLSessionRetryDataTaskForRequest:request numberOfRetries:retries retryInterval:interval test:testBlock subscriber:subscriber];
         
         [task resume];
         
@@ -154,7 +154,7 @@ NSTimeInterval const RACDefaultTimeInterval = 10.0;
         //
         // Retry data task will create tasks multiple times and keep executing them unless canceled
         //
-        id task = [self URLSessionRetryDataTaskForRequest:request numberOfRetries:retries retryInterval:interval test:testBlock subscriber:subscriber];
+        RACURLSessionRetryDataTask *task = [self URLSessionRetryDataTaskForRequest:request numberOfRetries:retries retryInterval:interval test:testBlock subscriber:subscriber];
         
         [task resume];
         
