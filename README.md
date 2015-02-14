@@ -3,6 +3,8 @@ AFNetworking 2.0 extensions to add ReactiveCocoa support with automatic retry ba
 
 Only extends AFHTTPSessionManager for now. For each HTTP operation a RACSignal is returned. Under the hood, multiple calls are made to desired API and only after final retry the operation is errored.
 
+For specific retry logic, a block can be provided.
+
 ## License
 
 [MIT License](https://github.com/Legoless/AFNetworking-RACRetryExtensions/blob/master/LICENSE)
