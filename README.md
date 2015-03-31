@@ -1,4 +1,8 @@
 # AFNetworking - RACRetryExtensions
+[![Build Status](http://img.shields.io/travis/legoless/AFNetworking-RACRetryExtensions/master.svg?style=flat)](https://travis-ci.org/legoless/AFNetworking-RACRetryExtensions)
+[![Pod Version](http://img.shields.io/cocoapods/v/AFNetworking-RACRetryExtensions.svg?style=flat)](http://cocoadocs.org/docsets/AFNetworking-RACRetryExtensions/)
+[![Pod Platform](http://img.shields.io/cocoapods/p/AFNetworking-RACRetryExtensions.svg?style=flat)](http://cocoadocs.org/docsets/AFNetworking-RACRetryExtensions/)
+[![Pod License](http://img.shields.io/cocoapods/l/AFNetworking-RACRetryExtensions.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 AFNetworking 2.0 extensions to add `ReactiveCocoa` support with automatic retry based on a special condition (timeout or similar). Retry condition can be set as a block, also based on HTTP status code.
 
