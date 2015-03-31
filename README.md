@@ -34,7 +34,32 @@ RACSignal* getSignal = [manager rac_GET:@"http://example.org" parameters:nil ret
 }];
 ```
 
-If the request fails from any reason
+*If the request fails from any reason, it will be retries 3 times. Before each retry attempt, task will wait for **10 seconds** before retrying.* Next block is called when response object is successfully received and error handler is called when all retries have exhausted. Error provided to the block is the error received on last retry. 
+
+In certain cases we do not wish to retry in every case, but in case of bad network connection or certain server state. The code below uses a custom retry block that will retry, if HTTP response status code is 5xx.
+
+```objc
+AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
+
+RACSignal* getSignal = [manager rac_GET:@"http://example.org" parameters:nil retries:3 interval:10.0 test:^BOOL(NSHTTPURLResponse *response, id responseObject, NSError *error)
+{
+    if (response.statusCode >= 500)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}];
+
+// Subscribe to signal to start request
+[getSignal subscribeNext:^(id responseObject) {
+    // Handle object
+} error:^(NSError *error) {
+    // Handle error
+}];
+```
 
 Contact
 ======
