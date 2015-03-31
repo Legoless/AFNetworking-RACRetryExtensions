@@ -73,7 +73,7 @@ NSTimeInterval const RACDefaultTimeInterval = 10.0;
 
 - (RACSignal *)rac_POST:(NSString *)path parameters:(id)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block retries:(NSInteger)retries interval:(NSTimeInterval)interval
 {
-    return [self rac_POST:parameters parameters:parameters constructingBodyWithBlock:block retries:retries interval:interval test:nil];
+    return [self rac_POST:path parameters:parameters constructingBodyWithBlock:block retries:retries interval:interval test:nil];
 }
 
 - (RACSignal *)rac_POST:(NSString *)path parameters:(id)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block retries:(NSInteger)retries interval:(NSTimeInterval)interval test:(RACURLSessionRetryTestBlock)testBlock
@@ -100,7 +100,7 @@ NSTimeInterval const RACDefaultTimeInterval = 10.0;
 
 - (RACSignal *)rac_PUT:(NSString *)path parameters:(id)parameters retries:(NSInteger)retries interval:(NSTimeInterval)interval
 {
-    return [self rac_PUT:parameters parameters:parameters retries:retries interval:interval test:nil];
+    return [self rac_PUT:path parameters:parameters retries:retries interval:interval test:nil];
 }
 
 - (RACSignal *)rac_PUT:(NSString *)path parameters:(id)parameters retries:(NSInteger)retries interval:(NSTimeInterval)interval test:(RACURLSessionRetryTestBlock)testBlock
