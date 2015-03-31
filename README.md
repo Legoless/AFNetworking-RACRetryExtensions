@@ -5,6 +5,29 @@ Only extends `AFHTTPSessionManager` for now with Reactive methods. For each HTTP
 
 For specific retry logic, a test block can be provided into the method, which will be evaluated on each retry. If operation returns `YES`, the request is retried.
 
-## License
+## Install
+
+The easiest way to install is with [CocoaPods](http://cocoapods.org) by specifying the pod in **Podfile**.
+
+```
+pod 'AFNetworking-RACRetryExtensions'
+```
+
+Alternatively you can download the .zip of the project and drag and drop files into your project (the manual way).
+
+## Usage
+
+
+Contact
+======
+
+Dal Rupnik
+
+- [legoless](https://github.com/legoless) on **GitHub**
+- [@thelegoless](https://twitter.com/thelegoless) on **Twitter**
+- [legoless@arvystate.net](mailto:legoless@arvystate.net)
+
+License
+======
 
 [MIT License](https://github.com/Legoless/AFNetworking-RACRetryExtensions/blob/master/LICENSE)
