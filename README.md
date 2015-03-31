@@ -17,6 +17,7 @@ Alternatively you can download the .zip of the project and drag and drop files i
 
 ## Usage
 
+**RACRetryExtensions** provide a category to `AFHTTPSessionManager` with multiple convenience methods that return an  `RACSignal` wrapped `RACURLSessionRetryDataTask`. Methods provide different configuration options, such as: number of retries before failing, sleep delay before next retry and retry test block.
 
 Contact
 ======
