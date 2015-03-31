@@ -17,7 +17,24 @@ Alternatively you can download the .zip of the project and drag and drop files i
 
 ## Usage
 
-**RACRetryExtensions** provide a category to `AFHTTPSessionManager` with multiple convenience methods that return an  `RACSignal` wrapped `RACURLSessionRetryDataTask`. Methods provide different configuration options, such as: number of retries before failing, sleep delay before next retry and retry test block.
+**RACRetryExtensions** provide a category to `AFHTTPSessionManager` with multiple convenience methods that return an  `RACSignal` wrapped `RACURLSessionRetryDataTask`. Methods provide different configuration options, such as: number of retries before failing, sleep delay before next retry and retry test block. First two parameters correspond to AFNetworking `AFHTTPSessionManager` HTTP method and parameters.
+
+Example of a HTTP **GET** method that connects to a simple website.
+
+```objc
+AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
+
+RACSignal* getSignal = [manager rac_GET:@"http://example.org" parameters:nil retries:3 interval:10.0];
+
+// Subscribe to signal to start request
+[getSignal subscribeNext:^(id responseObject) {
+    // Handle object
+} error:^(NSError *error) {
+    // Handle error
+}];
+```
+
+If the request fails from any reason
 
 Contact
 ======
