@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AFNetworking-RACRetryExtensions"
-  s.version      = "0.1.2"
+  s.version      = "0.2.0"
   s.summary      = "AFNetworking-RACRetryExtensions is an extension to the AFNetworking classes for iOS and Mac OS X that adds the auto-retry ability."
   s.homepage     = "https://github.com/legoless/AFNetworking-RACRetryExtensions"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
   s.source_files = 'RACRetryExtensions/*.{h,m}'
   s.requires_arc = true
-  s.dependency 'AFNetworking', '~> 2.0'
-  s.dependency 'ReactiveCocoa', '~> 2.0'
+  s.dependency 'AFNetworking', '~> 2.x'
+  s.dependency 'ReactiveCocoa', '~> 2.x'
 end
