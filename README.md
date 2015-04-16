@@ -32,8 +32,9 @@ AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
 RACSignal* getSignal = [manager rac_GET:@"http://example.org" parameters:nil retries:3 interval:10.0];
 
 // Subscribe to signal to start request
-[getSignal subscribeNext:^(id responseObject) {
-    // Handle object
+[getSignal subscribeNext:^(RACTuple *response) {
+    id object = [response first];
+    NSHTTPURLResponse urlResponse = [response second];
 } error:^(NSError *error) {
     // Handle error
 }];
